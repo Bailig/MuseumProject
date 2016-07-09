@@ -7,9 +7,6 @@ header {
         color:white;
         @include verticalCenter();
     }
-    h1{
-        font-size: 4em;
-    }
     p{
         font-size: 1em;
         font-weight: normal;
@@ -20,12 +17,16 @@ header {
     #doneArrow{
         margin-top: 1em;
         font-size: 4em;
+        width: 1em;
+        height: 2em;
         a:link, a:visited {
             color:white;
             text-decoration: none;
+            display: block;
         }
-        a:hover, a:active {
-            color: #bfbfbf;
+        a:hover {
+            color: #53e0c4;
+            transform: scale(1.2);
         }
     }
 }

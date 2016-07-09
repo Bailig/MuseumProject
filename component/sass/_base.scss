@@ -1,5 +1,4 @@
 @import 'variable';
-
 .navbar{
     border: 0px solid transparent;
     width: 100%;
@@ -11,10 +10,19 @@
 p, li{
     font-family: $bodyFont;
 }
+
+h1{
+    font-size: 3em;
+}
+
 h2{
     margin: 2em 0px .5em;
     font-size: 2em;
 }
 h3{
     font-size: 1.5em;
+}
+
+article{
+    margin-bottom: 2.5em;
 }

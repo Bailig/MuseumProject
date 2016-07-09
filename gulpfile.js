@@ -1,11 +1,10 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     compass = require('gulp-compass'),
-    concat = require('gulp-concat'),
-    browserify = require('gulp-browserify');
+    concat = require('gulp-concat');
 
 var sassSources = ['component/sass/style.scss'];
-var jsSources = ['component/js/*.js'];
+var jsSources = ['component/script/script.js'];
 
 gulp.task('compass',function(){
     gulp.src(sassSources)
@@ -14,18 +13,17 @@ gulp.task('compass',function(){
         image:'build/development/image',
         style:'expanded'
     })
-         .on('error',gulp.log))
-    .pipe(gulp.dest(build/development/css))
+         .on('error',gutil.log))
+    .pipe(gulp.dest('build/development/css'))
 });
 
 gulp.task('js',function(){
     gulp.src(jsSources)
     .pipe(concat('script.js'))
-    .pipe(browserify())
     .pipe(gulp.dest('build/development/js'))
 });
 
 gulp.task('watch',function(){
-    gulp.watch('component/sass/*.scss',['compass']);
+    gulp.watch(['component/sass/*.scss','component/sass/module/*.scss'],['compass']);
     gulp.watch(jsSources,['js'])
 });

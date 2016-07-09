@@ -1,0 +1,92 @@
+@import url(http://fonts.googleapis.com/css?family=Nixie+One);
+@import url(http://fonts.googleapis.com/css?family=Ledger);
+@import url(http://fonts.googleapis.com/css?family=Nixie+One);
+@import url(http://fonts.googleapis.com/css?family=Ledger);
+@import url(http://fonts.googleapis.com/css?family=Nixie+One);
+@import url(http://fonts.googleapis.com/css?family=Ledger);
+.navbar {
+  border: 0px solid transparent;
+  width: 100%;
+  z-index: 1000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nixie One", Georgia, serif;
+}
+
+p, li {
+  font-family: "Ledger", Garamond, Georgia, serif;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  margin: 2em 0px .5em;
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+article {
+  margin-bottom: 2.5em;
+}
+
+header {
+  background: url("../image/int1_2.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+header .row {
+  color: white;
+  height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  height: 100vh;
+  /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+}
+header p {
+  font-size: 1em;
+  font-weight: normal;
+  width: 65%;
+  margin: auto;
+  line-height: 2em;
+}
+header #doneArrow {
+  margin-top: 1em;
+  font-size: 4em;
+  width: 1em;
+  height: 2em;
+}
+header #doneArrow a:link, header #doneArrow a:visited {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+header #doneArrow a:hover {
+  color: #53e0c4;
+  transform: scale(1.2);
+}
+
+footer {
+  background-color: #34495e;
+  height: 40px;
+  color: white;
+}
+footer p {
+  float: right;
+}
+
+#background .row p {
+  margin-bottom: 2em;
+}
+
+#overview dl {
+  font-family: "Ledger", Garamond, Georgia, serif;
+}
