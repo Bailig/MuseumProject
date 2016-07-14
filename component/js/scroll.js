@@ -1,4 +1,6 @@
-$('.navbar a[href*=#]:not([href=#])').click(function() {
+var topoffset = 20;
+
+$(".navbar a[href*='#']:not([href='#']), #doneArrow a[href*='#']:not([href='#']").click(function() {
 if (location.pathname.replace(/^\//,'') === 
   this.pathname.replace(/^\//,'') && 
   location.hostname === this.hostname) {
