@@ -1,0 +1,7 @@
+#me{
+    @include backImage("../image/horse1.jpg",80vh);
+    color: white;
+    p{
+        padding-top: 3em;
+    }
+}

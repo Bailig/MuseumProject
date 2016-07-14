@@ -1,5 +1,8 @@
 @import '../variable';
 #overview{
+    .partsHead{
+        padding-left: 4em;
+    }
     dl {
         font-family: $bodyFont;
     }

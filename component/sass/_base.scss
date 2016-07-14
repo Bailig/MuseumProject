@@ -1,8 +1,6 @@
 @import 'variable';
-.navbar{
-    border: 0px solid transparent;
-    width: 100%;
-    z-index: 1000;
+body{
+    position: relative;
 }
 #{headings()}{
     font-family: $headFont;

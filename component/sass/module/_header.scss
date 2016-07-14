@@ -3,31 +3,89 @@
 
 header {
     @include backImage('../image/int1_2.jpg');
+    /*navbar at top start*/
+    .navbar{
+        border: 0px solid transparent;
+        width: 100%;
+        z-index: 1000;
+        padding: 1em;
+        transition: all .5s ease-out;
+    }
+    .navbar-inverse{
+        background: transparent;
+        .navbar-nav>.active>a{
+            background: transparent;
+            border-bottom: 4px solid $darkBlue;
+            color: $darkBlue;
+        }
+        .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus{
+            background: transparent;
+            color: $green;
+            border-bottom-color: $green;
+        }
+    }
+    .navbar-toggle{
+        background-color: $darkBlue;
+    }
+    /*navbar at top end*/
+    /*navbar in body start*/
+    .inbody.navbar{
+        background-color: $darkBlue;
+        padding: 0;
+    }
+    .inbody.navbar-inverse .navbar-nav>.active>a{
+        background: $green;
+        border-bottom: 0;
+        color: white;
+    }
+    /*navbar in body end*/
     .row{
         color:white;
         @include verticalCenter();
-    }
-    p{
-        font-size: 1em;
-        font-weight: normal;
-        width: 65%;
-        margin: auto;
-        line-height: 2em;
-    }
-    #doneArrow{
-        margin-top: 1em;
-        font-size: 4em;
-        width: 1em;
-        height: 2em;
-        a:link, a:visited {
-            color:white;
-            text-decoration: none;
-            display: block;
+        h1{
+            margin-top: -.5em;
         }
-        a:hover {
-            color: #53e0c4;
-            transform: scale(1.2);
+        p{
+            font-size: 1em;
+            font-weight: normal;
+            width: 65%;
+            margin: auto;
+            line-height: 2em;
+        }
+        #doneArrow{
+            margin-top: .5em;
+            font-size: 4em;
+            width: 1em;
+            height: 2em;
+            a:link, a:visited {
+                color:white;
+                text-decoration: none;
+                display: block;
+            }
+            a:hover {
+                color: #2f4154;
+                transform: scale(1.2);
+            }
         }
     }
 }
 
+/*background image of manager page*/
+#manager header{
+    @include backImage('../image/header5_3.jpg');
+}
+
+/*fix the navbar collapse problem*/
+@media only screen and (max-width:768px){
+    header {
+        .navbar-collapse.in{
+            background-color: $darkBlue;
+        }
+        .navbar-inverse .navbar-nav>.active>a{
+            background: transparent;
+            border-bottom: 4px solid $green;
+            color: $green;
+        }
+    }
+    
+}

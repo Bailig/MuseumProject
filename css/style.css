@@ -4,10 +4,8 @@
 @import url(http://fonts.googleapis.com/css?family=Ledger);
 @import url(http://fonts.googleapis.com/css?family=Nixie+One);
 @import url(http://fonts.googleapis.com/css?family=Ledger);
-.navbar {
-  border: 0px solid transparent;
-  width: 100%;
-  z-index: 1000;
+body {
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,6 +39,42 @@ header {
   background-position: center center;
   background-size: cover;
   height: 100vh;
+  /*navbar at top start*/
+  /*navbar at top end*/
+  /*navbar in body start*/
+  /*navbar in body end*/
+}
+header .navbar {
+  border: 0px solid transparent;
+  width: 100%;
+  z-index: 1000;
+  padding: 1em;
+  transition: all .5s ease-out;
+}
+header .navbar-inverse {
+  background: transparent;
+}
+header .navbar-inverse .navbar-nav > .active > a {
+  background: transparent;
+  border-bottom: 4px solid #34495e;
+  color: #34495e;
+}
+header .navbar-inverse .navbar-nav > .active > a:hover, header .navbar-inverse .navbar-nav > .active > a:focus {
+  background: transparent;
+  color: #1ecba9;
+  border-bottom-color: #1ecba9;
+}
+header .navbar-toggle {
+  background-color: #34495e;
+}
+header .inbody.navbar {
+  background-color: #34495e;
+  padding: 0;
+}
+header .inbody.navbar-inverse .navbar-nav > .active > a {
+  background: #1ecba9;
+  border-bottom: 0;
+  color: white;
 }
 header .row {
   color: white;
@@ -51,42 +85,124 @@ header .row {
   display: flex;
   align-items: center;
 }
-header p {
+header .row h1 {
+  margin-top: -.5em;
+}
+header .row p {
   font-size: 1em;
   font-weight: normal;
   width: 65%;
   margin: auto;
   line-height: 2em;
 }
-header #doneArrow {
-  margin-top: 1em;
+header .row #doneArrow {
+  margin-top: .5em;
   font-size: 4em;
   width: 1em;
   height: 2em;
 }
-header #doneArrow a:link, header #doneArrow a:visited {
+header .row #doneArrow a:link, header .row #doneArrow a:visited {
   color: white;
   text-decoration: none;
   display: block;
 }
-header #doneArrow a:hover {
-  color: #53e0c4;
+header .row #doneArrow a:hover {
+  color: #2f4154;
   transform: scale(1.2);
 }
 
+/*background image of manager page*/
+#manager header {
+  background: url("../image/header5_3.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+/*fix the navbar collapse problem*/
+@media only screen and (max-width: 768px) {
+  header .navbar-collapse.in {
+    background-color: #34495e;
+  }
+  header .navbar-inverse .navbar-nav > .active > a {
+    background: transparent;
+    border-bottom: 4px solid #1ecba9;
+    color: #1ecba9;
+  }
+}
 footer {
-  background-color: #34495e;
-  height: 40px;
-  color: white;
+  background: #34495e;
+}
+footer .navbar-inverse {
+  background: transparent;
 }
 footer p {
-  float: right;
+  color: white;
+  margin-top: 1em;
+  font-weight: bold;
 }
 
 #background .row p {
   margin-bottom: 2em;
 }
 
+#overview .partsHead {
+  padding-left: 4em;
+}
 #overview dl {
   font-family: "Ledger", Garamond, Georgia, serif;
+}
+
+#benefit .thumbnail img {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+#benefit #codeThum {
+  padding-bottom: 5em;
+}
+
+#utility a img {
+  width: 100%;
+  margin: auto;
+  transition: .5s;
+}
+#utility a #hidden {
+  font-size: .7em;
+  color: white;
+  position: relative;
+  bottom: 30px;
+  left: 10px;
+  visibility: hidden;
+}
+#utility a:hover #hidden {
+  visibility: visible;
+  animation: textHover .8s 1;
+}
+#utility a:hover img {
+  -webkit-filter: grayscale(50%);
+  /* Chrome, Safari, Opera */
+  filter: grayscale(50%);
+  transform: scale(1.02);
+}
+
+@keyframes textHover {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#me {
+  background: url("../image/horse1.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 80vh;
+  color: white;
+}
+#me p {
+  padding-top: 3em;
 }

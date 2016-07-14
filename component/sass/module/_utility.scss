@@ -1,0 +1,33 @@
+#utility{
+    a{
+        img{
+            width: 100%;
+            margin: auto;
+            transition: .5s;
+        }
+        #hidden{
+            font-size: .7em;
+            color: white;
+            position:relative;
+            bottom:30px;
+            left:10px;
+            visibility:hidden;
+        }
+    }
+    a:hover{
+        #hidden{
+            visibility:visible;
+            animation: textHover .8s 1;
+        }
+        img{
+            -webkit-filter: grayscale(50%); /* Chrome, Safari, Opera */
+            filter: grayscale(50%);
+            transform: scale(1.02);
+        }
+    }
+}
+
+@keyframes textHover{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}

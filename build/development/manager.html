@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Museum Story Map Project</title>
+		<link rel="stylesheet" type="text/css" href="lib/colorbox/colorbox.css">
+		<link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="lib/flat-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body data-spy="scroll" data-target=".navbar" data-offset="60" id="manager">
+		<header id="home">
+          <nav class="navbar navbar-inverse" role="navigation" data-spy="affix" data-offset-top="620">
+		    <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                       <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" href="#home">Bailig Abnahar</a>
+                </div>
+		    
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#utility">Utility</a></li>
+                        <li><a href="#usage">Usage</a></li>
+                        <li><a href="#cost">Cost</a></li>
+                        <li><a href="#me">About Me</a></li>
+                    </ul>
+                 </div>
+			  </div>
+		   </nav>
+          
+           <div class="container">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                       <h1 class="text-center">Developing a Story Map Strategy for Canada’s 150th Anniversary</h1>
+                        <p class="text-center">This project creates a story map strategy with excellent simplicity and user experience that will help connect the Canada Science and Technology Museum with its audience in the future.</p>
+                        <p class="text-center" id="doneArrow"><a href="#overview"><span class="glyphicon glyphicon-menu-down"></span></a></p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+           </div>
+		</header>
+       
+        <article id="overview" class="container">
+            <h2 class="text-center" >Project Overview</h2>
+            <div class="row">
+                <div class="col-md-6 col-sm-12" >
+                    <h3 class="partsHead">Part One</h3>
+                    <div class="text-right">- Student team from computer programming field</div>
+                    <p>The first part of the project is to geocode the geographic names, such as street name and city name, to a latitude and longitude, which is done by the student team from computer programming field.</p>
+                    <dl class="dl-horizontal">
+                        <dt>Input</dt>
+                        <dd>Tables have a description with geographic names in each row.</dd>
+                        <dt>Output</dt>
+                        <dd>Tables with two columns of data added, which are geocoded latitude and longitude.</dd>
+                    </dl>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h3 class="partsHead">Part Two</h3>
+                    <div class="text-right">- Bailig Abahanar, the GIS student</div>
+                    <p>In the second part of the project, The Respondent created an interactive online map that manages to locate every invention and creation in technology and science throughout the history of Canada. The map utilizes the ESRI story map template and ArcGIS online.</p>
+                    <dl class="dl-horizontal">
+                        <dt>Input</dt>
+                        <dd>The data provided by the student team with latitude and longitude.</dd>
+                        <dt>Output</dt>
+                        <dd>A fully customized story map template;</dd>
+                        <dd>A series of programming scripts for the preparation of the data required;</dd>
+                        <dd>A practice guide on implementation of the story map template.</dd>
+                    </dl>
+                </div>
+            </div>
+        </article>
+        
+        <article id="utility" class="container">
+            <div class="row">
+                <h2 class="text-center">Story Map Utility</h2>
+                <p class="text-center">Story maps can improve user experience dramatically, compared with conventional storytelling based on text information.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="../MuseumStoryMap/index.html" target="_blank">
+                        <img class="img-rounded img-responsive" src="image/fall1.jpg" alt="The Story Map">
+                        <p id="hidden">View The Story Map</p>
+                    </a>
+                </div>
+                <div class="col-md-8">
+                   <dl class="dl-horizontal">
+                      <dt>Interactive</dt>
+                      <dd>Users can fully explore the grand museum collections on the map using pan, zoom, and click motions as needed.</dd>
+                      <dt>Easily access</dt>
+                      <dd>Users can view the map on the go using their mobile phones, laptops, or any devices that have internet connections.</dd>
+                      <dt>Visual Impact</dt>
+                      <dd>Users are able to view the image and description of each technology from pop-out windows right on top of the map.</dd>
+                      <dt>Impressive</dt>
+                      <dd>Benefiting from the combination of image, text, and authoritative map, the collection is presented to the viewers in a unique and impressive way.</dd>
+                   </dl>
+                </div>
+            </div>
+        </article>
+        
+        <article id="usage" class="container">
+            <h2 class="text-center">Three Main Steps to Create The Museum Story Map</h2>
+            <div class="row">
+                <h3 class="text-center">Step One: Data Preparation</h3>
+                <div class="col-md-3">
+                    <a href="image/csv.jpg"><img src="image/csv.jpg" alt="Table" class="img-responsive img-rounded"></a>
+                </div>
+                <div class="col-md-3">
+                    <a href="image/json.jpg"><img src="image/json.jpg" alt="JSON" class="img-responsive img-rounded"></a>
+                </div>
+                <div class="col-md-6">
+                    <p>Eleven comma-delimited tables in CSV format and a JSON format file will be created through the provided script tools.</p> 
+                    <p>The eleven CSV tables contain the data that are required to locate the collections on the map, and each CSV file contains a particular predefined group of collections.</p>
+                    <p>The JSON file contains all the detailed information except location information. It will be used to show the description and image of the collections. The screenshot here shows one CSV and JSON example.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <h3 class="text-center">Step Two: Add Data to ArcGIS Online</h3>
+                <div class="col-md-6">
+                    <p>Add the eleven CSV format files into your ArcGIS web map. Each CSV file will be a layer in the web map. The names of the layers and the order they are listed in your map are used by the story map tabs. The screenshot here shows eleven point layers added to the web map, which will each define one tab in the story map.</p>
+                </div>
+                <div class="col-md-6">
+                   <a href="image/onlinemap.jpg"><img src="image/onlinemap.jpg" alt="Web Map" class="img-responsive  img-rounded"></a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <h3 class="text-center">Step Three: Configure The Story Map Template</h3>
+                <div class="col-md-6">
+                    <a href="image/idconfig.jpg"><img src="image/idconfig.jpg" alt="Config" class="img-responsive  img-rounded"></a>
+                </div>
+                <div class="col-md-6">
+                    <p>Configure the Shortlist template to use your web map by editing the index.html file. You can open this file in the editor of your choice. In the Config section of the file, edit the WEBMAP_ID variable to be the ID of your web map.</p>
+                    <p>Put the JSON format file in the spesific location with spesific file name.</p>
+                </div>
+            </div>
+        </article>
+        
+        <article id="cost" class="container">
+            <div class="row">
+                <h2 class="text-center">Project Cost</h2>
+                <div class="col-md-6">
+                    <h3 class="text-center">Time Cost</h3>
+                    <p>The time cost of this story map project can vary from a few hours to a couple of weeks depending on the condition of input data, required software, and the technician who is responsible for the project.</p>
+                    <ul>
+                        <li>If the format of input data is changed in the future, the provided script tool that implements the data to meet the requirement may have to be modified to work properly.</li>
+                        <li>Visual Studio, an integrated development environment (IDE) from Microsoft, and an IDE for Python, will be needed to run these script tools to prepare the data. If the software is not installed yet, it would take some time to install.</li>
+                        <li>The understanding of Python and C# programming language of the technician will determine how long it is going to take to prepare the data when the changes are needed. A good grasp of the two programming languages and the software mentioned above will help to speed up the story map creation process. However, there will be well-written comments for the code as well as a written guide to assist the technical person.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-center">Financial Cost</h3>
+                    <p>The financial cost can also vary from zero to thousand of dollars depending on the volume of data input and the software supports of the time.</p>
+                    <ul>
+                        <li>ArcGIS online provides a free account that can be used to create the story map. However, it has a limitation on the input data. Therefore, the museum would need to purchase an annual subscription, if a large volume of data input is needed.</li>
+                        <li>Visual Studio is not a free tool; therefore, the museum might need to purchase it to be able to run the script tools, if they do not have one yet.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        <article id="me" class="container">
+            <h2 class="text-center">About Me</h2>
+            <div class="row" id="background">
+               <div class="col-md-6 col-md-offset-5">
+                   <p class="text-center">My name is Bailig Abhanar, I am currently studying in the Algonquin College Graduate Certificate program in Geographic Information Systems. If you have any question about anything, feel free to contact me at bai00022@algonquinlive.com.</p>
+               </div>
+            </div>
+        </article>
+        
+        <footer>
+          <div class="container-fluid">
+              <div class="row">
+                    <div class="col-sm-3">
+                        <p>Bailig Abhanar | Algonquin Colleg</p>
+                    </div>
+                    <div class="col-sm-9">
+                       <nav class="navbar navbar-inverse navbar-right" role="navigation">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a class="navbar-link" href="../MuseumStoryMap/index.html">The Museum Story Map</a></li>
+                                <li><a class="navbar-link" href="index.html">Project Overview</a></li>
+                                <li><a class="navbar-link" href="manager.html">Documentation for Sponsors</a></li>
+                                <!--<li><a class="navbar-link" href="#">Documentation for Technician</a></li>-->
+                            </ul>
+                        </nav>
+                   </div>
+                </div>
+           </div>
+        </footer>
+        
+	    <script type="text/javascript" src="lib/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/colorbox/jquery.colorbox-min.js"></script>
+        <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>

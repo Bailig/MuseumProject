@@ -1,8 +1,11 @@
 footer{
-    background-color: #34495e;
-    height: 40px;
-    color: white;
+    background: #34495e;
+    .navbar-inverse{
+        background: transparent;
+    }
     p{
-        float: right;
+        color:white;
+        margin-top: 1em;
+        font-weight: bold;
     }
 }

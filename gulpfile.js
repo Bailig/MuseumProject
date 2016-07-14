@@ -4,7 +4,9 @@ var gulp = require('gulp'),
     concat = require('gulp-concat');
 
 var sassSources = ['component/sass/style.scss'];
-var jsSources = ['component/script/script.js'];
+var jsSources = ['component/js/colorbox.js',
+                 'component/js/nav.js',
+                 'component/js/scroll.js'];
 
 gulp.task('compass',function(){
     gulp.src(sassSources)
