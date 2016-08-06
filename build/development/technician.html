@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Museum Story Map Project</title>
+		<link rel="stylesheet" type="text/css" href="lib/colorbox/colorbox.css">
+		<link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="lib/flat-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body data-spy="scroll" data-target=".navbar" data-offset="60" id="technician">
+		<header id="home">
+          <nav class="navbar navbar-inverse" role="navigation" data-spy="affix" data-offset-top="200">
+		    <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                       <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" href="#home">Bailig Abnahar</a>
+                </div>
+		    
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#dataPreparation">Data Preparation</a></li>
+                        <li><a href="#createMap">Create Map</a></li>
+                        <li><a href="#configureMap">Configure Map</a></li>
+                    </ul>
+                 </div>
+			  </div>
+		   </nav>
+           <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                       <h1>Museum Story Map Practice Guide</h1>
+                    </div>
+                </div>
+           </div>
+		</header>
+       
+        <article id="overview" class="container">
+            <h2 class="text-center">Overview: Three Main Steps</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Step One: Data Preparation</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <p>Eleven comma-delimited tables in CSV format and a JSON format file will be created through the provided script tools.</p> 
+                    <p>The eleven CSV tables contain the data that are required to locate the collections on the map, and each CSV file contains a particular predefined group of collections.</p>
+                    <p>The JSON file contains all the detailed information except location information. It will be used to show the description and image of the collections. The screenshot here shows one CSV and JSON example.</p>
+                </div>
+                <div class="col-md-3 col-md-push-1">
+                    <a href="image/csv.jpg"><img src="image/csv.jpg" alt="Table" class="img-responsive img-rounded"></a>
+                
+                    <a href="image/json.jpg"><img src="image/json.jpg" alt="JSON" class="img-responsive img-rounded"></a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 >Step Two: Add Data to ArcGIS Online</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <p>Add the eleven CSV format files into your ArcGIS web map. Each CSV file will be a layer in the web map. The names of the layers and the order they are listed in your map are used by the story map tabs. The screenshot here shows eleven point layers added to the web map, which will each define one tab in the story map.</p>
+                </div>
+                <div class="col-md-5">
+                   <a href="image/onlinemap.jpg"><img src="image/onlinemap.jpg" alt="Web Map" class="img-responsive  img-rounded"></a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Step Three: Configure The Story Map Template</h3>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-md-7">
+                    <p>Configure the Shortlist template to use your web map by editing the index.html file. You can open this file in the editor of your choice. In the Config section of the file, edit the WEBMAP_ID variable to be the ID of your web map.</p>
+                    <p>Put the JSON format file in the spesific location with spesific file name.</p>
+                </div>
+                <div class="col-md-5">
+                    <a href="image/idconfig.jpg"><img src="image/idconfig.jpg" alt="Config" class="img-responsive  img-rounded"></a>
+                </div>
+            </div>
+        </article>
+        <hr>
+        <article id="dataPreparation" class="container">
+            <h2 class="text-center">Data Preparation</h2>
+            <div class="row">
+                <div class="col-md-1">
+                    <p class="number">1</p>
+                </div>
+                <div class="col-md-11">
+                    <p class="marginTop"><b>If you are a computer programmer</b>, you can prepare the data on your own without relying on the provided scripts. There are the utility and the required format of both CSV and JSON format files, which are required for creating the museum story map with the provided story map template.</p>
+                    <dl class="dl-horizontal">
+                        <dt>Utility of CSV</dt>
+                        <dd>The CSV format files should contain the data that are required to locate the collections on the map, and each CSV file should contain a particular predefined group of collections. It is because each CSV file will be a layer in the web map, and the names of the layers and the order they are listed in your map are used by the story map tabs.</dd>
+                        <dt>Format of CSV</dt>
+                        <dd>CSV stands for "comma-separated values". Its data fields should be separated, or delimited, by a comma. <a href="http://www.computerhope.com/issues/ch001356.htm" target="_blank">See How To Create A CSV File</a>. By default, the valid fields names for creating the story map with the provided template are:
+                        <table class="table table-bordered table-hover">
+                           <thead>
+                               <tr>
+                                   <th>Valid fields names (case sensitive)</th>
+                                   <th>Descriptions</th>
+                               </tr>
+                            </thead>
+                            <tbody>
+                               <tr>
+                                   <td>LocationID</td>
+                                   <td>Items sharing one location should have the same LocationID.</td>
+                               </tr>
+                               <tr>
+                                   <td>ArtifactID</td>
+                                   <td>ArtifactID could be a foreign key.</td>
+                               </tr>
+                               <tr>
+                                   <td>Group</td>
+                                   <td>Describes which tab the data belongs to.</td>
+                               </tr>
+                               <tr>
+                                   <td>Name</td>
+                                   <td>The name of an item</td>
+                               </tr>
+                               <tr>
+                                   <td>Short_Desc</td>
+                                   <td>A general description</td>
+                               </tr>
+                               <tr>
+                                   <td>Pic_URL</td>
+                                   <td>Picture URL</td>
+                               </tr>
+                               <tr>
+                                   <td>Thum_URL</td>
+                                   <td>Thumbnail URL</td>
+                               </tr>
+                               <tr>
+                                   <td>Latitude</td>
+                                   <td>Latitude</td>
+                               </tr>
+                               <tr>
+                                   <td>Longitude</td>
+                                   <td>Longitude</td>
+                               </tr>
+                               <tr>
+                                   <td>Point_Count</td>
+                                   <td>The number of items sharing the location</td>
+                               </tr>
+                            </tbody>
+                        </table>
+                        You can find the sample CSV format files from the "sample/WebMapCSVs" folder.
+                        </dd>
+                        <dt>Utility of JSON</dt>
+                        <dd>The JSON file should contain all the detailed information except location information (Latitude and Longitude). It will be used to show the description and image of the items. When a Detail button from a popup window is clicked, the detailed information will be loaded from the JSON file into the browser by JavaScript.</dd>
+                        <dt>Format of JSON</dt>
+                        <dd>JSON stands for "JavaScript Object Notation". JSON is built on two structures. Fist, a collection of name/value pairs. Second, An ordered list of values. <a href="http://www.w3schools.com/json/" target="_blank">See JSON Tutorial</a>. By default, the valid keys names for creating the story map with the provided template are:
+                        <table class="table table-bordered table-hover">
+                           <thead>
+                               <tr>
+                                   <th>Valid keys names (case sensitive)</th>
+                                   <th>Descriptions</th>
+                               </tr>
+                            </thead>
+                            <tbody>
+                               <tr>
+                                   <td>LocationID</td>
+                                   <td>Items sharing one location should have the same LocationID.</td>
+                               </tr>
+                               <tr>
+                                   <td>ArtifactID</td>
+                                   <td>ArtifactID could be a foreign key.</td>
+                               </tr>
+                               <tr>
+                                   <td>Tab_Name</td>
+                                   <td>Describes which tab the data belongs to.</td>
+                               </tr>
+                               <tr>
+                                   <td>Name</td>
+                                   <td>The name of an item</td>
+                               </tr>
+                               <tr>
+                                   <td>Short_Desc</td>
+                                   <td>A general description</td>
+                               </tr>
+                               <tr>
+                                   <td>Pic_URL</td>
+                                   <td>Picture URL</td>
+                               </tr>
+                               <tr>
+                                   <td>Thum_URL</td>
+                                   <td>Thumbnail URL</td>
+                               </tr>
+                               <tr>
+                                   <td>ArtifactFinish</td>
+                                   <td>Artifact finish</td>
+                               </tr>
+                               <tr>
+                                   <td>BeginDate</td>
+                                   <td>Begin date</td>
+                               </tr>
+                               <tr>
+                                   <td>EndDate</td>
+                                   <td>End date</td>
+                               </tr>
+                               <tr>
+                                   <td>Height</td>
+                                   <td>Height</td>
+                               </tr>
+                               <tr>
+                                   <td>Width</td>
+                                   <td>Width</td>
+                               </tr>
+                               <tr>
+                                   <td>Length</td>
+                                   <td>Length</td>
+                               </tr>
+                               <tr>
+                                   <td>Manufacturer</td>
+                                   <td>Manufacturer</td>
+                               </tr>
+                               <tr>
+                                   <td>NumberOfComponents</td>
+                                   <td>The number of components</td>
+                               </tr>
+                            </tbody>
+                        </table>
+                        You can find the sample JSON format file from the "sample" folder.
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-1">
+                   <p class="number">2</p>
+                </div>
+                <div class="col-md-11">
+                    <p class="marginTop"><b>If you are not a programmer</b>, you can create the CSV and JSON format files with the provided scripts. However, you should at least know some basics of using a database to select and join tables.</p>
+                    <ol>
+                        <li>
+                            Get the geocoded data from the student team from computer programming field.
+                        </li>
+                        <li>
+                            Use your database to join the two tables, "artifacts.csv" and "category.csv", on key artifactID.
+                        </li>
+                        <li>
+                            Select all the records with the required fields that their group1, image, and thumbnail field must not be null, and at least either ManuProvince or ManuCity field is not null. Following is the SQL statement for this selection:
+
+                            <pre>SELECT &lt;required fields&gt; <br>FROM &lt;the joined table name&gt; <br>WHERE image IS NOT NULL AND <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group1 IS NOT NULL AND <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ManuProvince IS NOT NULL OR ManuCity IS NOT NULL);</pre>
+                            
+                            Following is the valid fields names (case sensitive): artifactID, ObjectName, GeneralDescription, Manufacturer, BeginDate, EndDate, NumberOfComponents, ArtifactFinish, group1, Length, Width, Height, image, thumbnail, lat, lng.
+                        </li>
+                        <li>
+                            Export the selected table to a comma-delimited CSV file. If you could not export it to comma-delimited CSV file, you could export it to a "|" delimited file and then run it through the provided Python script, "convertToCSV.py", to create the comma-delimited CSV file. You can find the Python script under the folder "script".
+                        </li>
+                        <li>
+                            Open the "script\src\DataPreparation.sln" file with Microsoft Visual Studio, an integrated development environment (IDE) from Microsoft. 
+                        </li>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <li>
+                                    Navigate to "# region Set Variables". Assign the absolute input and output paths to the variables. For the descriptions of the variables, see the comments.
+                                </li>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="image/setvariables.jpg"><img src="image/setvariables.jpg" alt="Set variables" class="img-responsive img-rounded"></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <li>
+                                    Run the script by clicking on the Start button, as shown in the image.
+                                </li>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="image/startbutton.jpg"><img class="img-rounded img-responsive" src="image/startbutton.jpg" alt="Start button"></a>
+                            </div>
+                        </div>
+                    </ol>
+                    <p>The script should generate a JSON file and 12 CSV files, one master and 11 CSV files. You can find the sample CSV and JSON files from the "sample" folder.</p>
+                </div>
+            </div>
+        </article>
+        <hr>
+        <article id="createMap" class="container">
+            <h2 class="text-center">Add Data to ArcGIS Online</h2>
+            <div class="row">
+               <div class="col-md-1">
+                   <p class="number">3</p>
+               </div>
+                <div class="col-md-11">
+                    <p>
+                        In this step, we will add the 11 CSV format files into your ArcGIS web map. In your web map, zoom and pan to the area you want users to see when they first open your Story Map, and save your map. The title you save your map as is used as the title of your Story Map, and the summary is used as the subtitle.
+                    </p>
+                    <ol>
+                        <div class="row">
+                           <div class="col-md-7">
+                            <li>Log in to ArcGIS Online using a free, non-commercial ArcGIS public account or an ArcGIS subscription account, and create a new web map. Choose the basemap you want to use.</li>
+                            </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-7">
+                            <li>Add the 11 CSV format files into your ArcGIS web map by clicking on "Add Layer From File". Each CSV file will be a layer in the web map. The names of the layers and the order they are listed in your map are used by the story map tabs.</li>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="image/addlayerfromfile.jpg"><img class="img-rounded img-responsive" src="image/addlayerfromfile.jpg" alt="Add layers"></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-7">
+                            <li>In your web map, zoom and pan to the area you want users to see when they first open your Story Map, and save your map. The title you save your map as is used as the title of your Story Map, and the summary is used as the subtitle.</li>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="image/savemap.jpg"><img class="img-rounded img-responsive" src="image/savemap.jpg" alt="Save map"></a>
+                            </div>
+                        </div> 
+                        <div class="row">
+                           <div class="col-md-7">
+                            <li>Share your web map. Normally you share your web map publicly so anyone can access your Story Map. But you also have the option, if you are using an ArcGIS subscription account, to share your map just within your organization if your Story Map is not intended for use by the general public.</li>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="image/sharemap.jpg"><img class="img-rounded img-responsive" src="image/sharemap.jpg" alt="Share map"></a>
+                            </div>
+                        </div>
+                    </ol>
+                </div>
+            </div>
+        </article>
+        <hr>
+        <article id="configureMap" class="container">
+            <h2 class="text-center">Configure The Story Map Template</h2>
+            <div class="row">
+               <div class="col-md-1">
+                   <p class="number">4</p>
+               </div>
+                <div class="col-md-11">
+                    <p>Configure the Story Map template to use your web map by editing the index.html file and copying the JSON format file created in step one into the specific location.</p>
+                    <ol>
+                        <li>Copy the contents of the Story Map template onto a publicly accessible website or web server. This can be a web server that you or your organization maintains, or it can be a folder on a shared or hosted web server that you use for your website.</li>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <li>Open the "index.html" file in the editor of your choice. In the Config section of the file, edit the WEBMAP_ID variable to be the ID of your web map. The webmap ID is part of your web map URL.</li>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="image/mapid.jpg"><img class="img-rounded img-responsive" src="image/mapid.jpg" alt="Map id"></a>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="image/idconfig.jpg"><img src="image/idconfig.jpg" alt="Config" class="img-responsive  img-rounded"></a>
+                            </div>
+                        </div>
+                        <li>Copy the JSON format file created in step one into the spesific location "app\js\detailInfo.json" with default file name "detailInfo.json".</li>
+                    </ol>
+                </div>
+            </div>
+        </article>
+        
+        <footer>
+          <div class="container-fluid">
+              <div class="row">
+                    <div class="col-sm-3">
+                        <p>Bailig Abhanar | Algonquin College</p>
+                    </div>
+                    <div class="col-sm-9">
+                       <nav class="navbar navbar-inverse navbar-right" role="navigation">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a class="navbar-link" href="../MuseumStoryMap/index.html">The Museum Story Map</a></li>
+                                <li><a class="navbar-link" href="index.html">Project Overview</a></li>
+                                <li><a class="navbar-link" href="manager.html">Documentation for Sponsors</a></li>
+                                <li><a class="navbar-link" href="technician.html">Documentation for Technician</a></li>
+                            </ul>
+                        </nav>
+                   </div>
+                </div>
+           </div>
+        </footer>
+        
+	    <script type="text/javascript" src="lib/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/colorbox/jquery.colorbox-min.js"></script>
+        <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>

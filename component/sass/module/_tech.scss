@@ -1,0 +1,42 @@
+#technician {
+    h1{
+        font-size: 2em;
+        padding-top: 1em;
+    }
+    h2{
+        font-size: 1.6em;
+    }
+    h3{
+        font-size: 1.4em;
+    }
+    .number{
+        font-size: 3em;
+    }
+    ol li{
+        margin-top: 1em;
+    }
+    
+    img{
+        margin-bottom: .7em;
+    }
+    
+    #dataPreparation{
+        table{
+            margin: 1em;
+            width: 70%;
+            font-size: .9em;
+        }
+        .marginTop{
+            margin-top: 1em;
+        }
+        pre{
+            width: 60%;
+            margin-top: .7em;
+        }
+    }
+    #configureMap{
+        img {
+            margin-top: 1em;
+        }
+    }
+}

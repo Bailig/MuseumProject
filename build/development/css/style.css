@@ -34,11 +34,6 @@ article {
 }
 
 header {
-  background: url("../image/int1_2.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  height: 100vh;
   /*navbar at top start*/
   /*navbar at top end*/
   /*navbar in body start*/
@@ -111,6 +106,15 @@ header .row #doneArrow a:hover {
   transform: scale(1.2);
 }
 
+/*background image of index page*/
+#index header {
+  background: url("../image/int1_2.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+
 /*background image of manager page*/
 #manager header {
   background: url("../image/header5_3.jpg");
@@ -118,6 +122,19 @@ header .row #doneArrow a:hover {
   background-position: center center;
   background-size: cover;
   height: 100vh;
+}
+
+/*background image of technician page*/
+#technician header {
+  background: url("../image/techheader.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 13em;
+}
+#technician header .row {
+  height: 10em;
+  align-items: flex-start;
 }
 
 /*fix the navbar collapse problem*/
@@ -205,4 +222,39 @@ footer p {
 }
 #me p {
   padding-top: 3em;
+}
+
+#technician h1 {
+  font-size: 2em;
+  padding-top: 1em;
+}
+#technician h2 {
+  font-size: 1.6em;
+}
+#technician h3 {
+  font-size: 1.4em;
+}
+#technician .number {
+  font-size: 3em;
+}
+#technician ol li {
+  margin-top: 1em;
+}
+#technician img {
+  margin-bottom: .7em;
+}
+#technician #dataPreparation table {
+  margin: 1em;
+  width: 70%;
+  font-size: .9em;
+}
+#technician #dataPreparation .marginTop {
+  margin-top: 1em;
+}
+#technician #dataPreparation pre {
+  width: 60%;
+  margin-top: .7em;
+}
+#technician #configureMap img {
+  margin-top: 1em;
 }

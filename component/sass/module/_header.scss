@@ -2,7 +2,6 @@
 @import '../variable';
 
 header {
-    @include backImage('../image/int1_2.jpg');
     /*navbar at top start*/
     .navbar{
         border: 0px solid transparent;
@@ -70,9 +69,21 @@ header {
     }
 }
 
+/*background image of index page*/
+#index header{
+    @include backImage('../image/int1_2.jpg');
+}
 /*background image of manager page*/
 #manager header{
     @include backImage('../image/header5_3.jpg');
+}
+/*background image of technician page*/
+#technician header{
+    @include backImage('../image/techheader.jpg', 13em);
+    .row{
+        height: 10em;
+        align-items:flex-start;
+    }
 }
 
 /*fix the navbar collapse problem*/
